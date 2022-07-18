@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Notes aux concours</title>	
+	</head>
+	<body>
+
+		<p><a target="_blank" href="https://www.banquept.fr/2022_res_admiss/resultats_concours.php">Résultats écrits</a></p>
+		
+		<div>
+			<input class="matières" type="text" placeholder="Maths_A" id="Maths_A">
+			<input class="matières" type="text" placeholder="Maths_B" id="Maths_B">
+			<input class="matières" type="text" placeholder="Maths_C" id="Maths_C">
+			<input class="matières" type="text" placeholder="Phy_A" id="Phy_A">
+			<input class="matières" type="text" placeholder="Phy_B" id="Phy_B">
+			<input class="matières" type="text" placeholder="Info" id="Info">
+			<input class="matières" type="text" placeholder="FR_A" id="FR_A">
+			<input class="matières" type="text" placeholder="FR_B" id="FR_B">
+			<input class="matières" type="text" placeholder="Ang_A" id="Ang_A">
+			<input class="matières" type="text" placeholder="Ang_B" id="Ang_B">
+			<input class="matières" type="text" placeholder="SI_A" id="SI_A">
+			<input class="matières" type="text" placeholder="SI_B" id="SI_B">
+			<input class="matières" type="text" placeholder="SI_C" id="SI_C">
+		</div>
+			<p><a target="_blank" href="https://www.banquept.fr/2022_notes_oral/index.php">Résultats oraux</a></p>
+
+		<div>
+			<input class="matières" type="text" placeholder="M1" id="M1">
+			<input class="matières" type="text" placeholder="M2" id="M2">
+			<input class="matières" type="text" placeholder="TPPC" id="TPPC">
+			<input class="matières" type="text" placeholder="TPSI" id="TPSI">
+			<input class="matières" type="text" placeholder="PC" id="PC">
+			<input class="matières" type="text" placeholder="Planche" id="Planche">
+			<input class="matières" type="text" placeholder="Angl" id="Angl">
+			<input class="matières" type="text" placeholder="LV2" id="LV2">
+			<input class="matières" type="text" placeholder="TIPE" id="TIPE">
+		</div>
+
+		<div style="margin-top:15px;">
+			<button class="res" onclick="calcul()">Afficher les moyennes</button>	
+		</div>
+
+		<div class="avg"> 
+			<p>
+                Moyenne Centrale : <span class="centrale"></span>
+			</p>
+
+			<p>
+                Mines Ponts: <span class="mines"></span>
+			</p>
+
+            <p>
+                ENS : <span class="ens"></span>
+			</p>
+
+            <p>
+                Arts et Métiers : <span class="arts"></span>
+			</p>
+
+		</div>	
+
+
+
+	<script type="text/javascript">
+		function calcul(){
+			var Maths_A=parseFloat(document.getElementById('Maths_A').value);
+			var Maths_B=parseFloat(document.getElementById('Maths_B').value);
+			var Maths_C=parseFloat(document.getElementById('Maths_C').value);
+			var Phy_A=parseFloat(document.getElementById('Phy_A').value);
+			var Phy_B=parseFloat(document.getElementById('Phy_B').value);
+			var Info=parseFloat(document.getElementById('Info').value);
+			var FR_A=parseFloat(document.getElementById('FR_A').value);
+			var FR_B=parseFloat(document.getElementById('FR_B').value);
+			var Ang_A=parseFloat(document.getElementById('Ang_A').value);
+			var Ang_B=parseFloat(document.getElementById('Ang_B').value);
+			var SI_A=parseFloat(document.getElementById('SI_A').value);
+			var SI_B=parseFloat(document.getElementById('SI_B').value);
+			var SI_C=parseFloat(document.getElementById('SI_C').value);
+
+			var M1=parseFloat(document.getElementById('M1').value);
+			var M2=parseFloat(document.getElementById('M2').value);
+			var TPPC=parseFloat(document.getElementById('TPPC').value);
+			var TPSI=parseFloat(document.getElementById('TPSI').value);
+			var PC=parseFloat(document.getElementById('PC').value);
+			var Planche=parseFloat(document.getElementById('Planche').value);
+			var Angl=parseFloat(document.getElementById('Angl').value);
+			var LV2=parseFloat(document.getElementById('LV2').value);
+			var TIPE=parseFloat(document.getElementById('TIPE').value);
+
+			if(LV2<=10){		
+				const centrale=document.querySelector(".centrale");
+				var moy_centrale=parseFloat((11*TIPE+13*(M1+M2+Angl)+22*TPPC+28*TPSI)+(8*Maths_A + 8*Maths_B + 8*Maths_C + 8*Phy_A + 8*Phy_B  + 10*Info + 17*FR_A+11*Ang_A+16*SI_A+6*SI_C))/200;
+				centrale.innerHTML=moy_centrale;
+
+				const mines=document.querySelector(".mines");
+				var moy_mines=parseFloat(((3*FR_B+4*TPPC+5*Angl+6*(TIPE+PC)+8*TPSI+9*M1)+(3*Maths_B+4*Maths_C+4*Phy_A+3*Phy_B+1*Info+5*FR_B+3*Ang_A+6*SI_A))/(41+29));
+				mines.innerHTML=moy_mines;
+
+				const ens=document.querySelector(".ens");
+				var moy_ens=parseFloat(((2*(Planche+Angl)+4*(M1+TPSI+TIPE+FR_B)+6*TPPC+Ang_A)+(3*(Maths_A+Maths_C+Phy_A)+2*(Info+Phy_B)+4*SI_A+6*SI_C))/50);
+				ens.innerHTML=moy_ens;
+
+				const arts=document.querySelector(".arts");
+				var moy_arts=parseFloat(((4*(M2+PC+TPSI)+5*(Angl+TIPE+FR_B)+6*Planche)+(4*(Maths_B+Maths_C+Phy_A+Phy_B+Ang_B+Info)+5*(FR_A+SI_A)+6*SI_B))/73);
+				arts.innerHTML=moy_arts;
+			}
+			
+			else{
+				const centrale=document.querySelector(".centrale");
+				var moy_centrale=parseFloat((11*TIPE+13*(M1+M2+Angl)+22*TPPC+28*TPSI)+(8*Maths_A + 8*Maths_B + 8*Maths_C + 8*Phy_A + 8*Phy_B  + 10*Info + 17*FR_A+11*Ang_A+16*SI_A+6*SI_C) + 10*(LV2-10))/200;
+				centrale.innerHTML=moy_centrale;
+
+				const mines=document.querySelector(".mines");
+				var moy_mines=parseFloat(((3*FR_B+4*TPPC+5*Angl+6*(TIPE+PC)+8*TPSI+9*M1)+(3*Maths_B+4*Maths_C+4*Phy_A+3*Phy_B+1*Info+5*FR_B+3*Ang_A+6*SI_A)+2*(LV2-10))/(41+29));
+				mines.innerHTML=moy_mines;
+
+				const ens=document.querySelector(".ens");
+				var moy_ens=parseFloat(((2*(Planche+Angl)+4*(M1+TPSI+TIPE+FR_B)+6*TPPC+Ang_A)+(3*(Maths_A+Maths_C+Phy_A)+2*(Info+Phy_B)+4*SI_A+6*SI_C))/50);
+				ens.innerHTML=moy_ens;
+
+				const arts=document.querySelector(".arts");
+				var moy_arts=parseFloat(((4*(M2+PC+TPSI)+5*(Angl+TIPE+FR_B)+6*Planche)+(4*(Maths_B+Maths_C+Phy_A+Phy_B+Ang_B+Info)+5*(FR_A+SI_A)+6*SI_B)+(LV2-10))/73);
+				arts.innerHTML=moy_arts;
+			}
+		}
+	</script>
+
+	</body>
+</html>
