@@ -8,29 +8,34 @@
 		<p><a target="_blank" href="https://www.banquept.fr/2022_res_admiss/resultats_concours.php">Résultats écrits</a></p>
 		
 		<div>
-			<input class="matières" type="text" placeholder="Maths_A" id="Maths_A">
-			<input class="matières" type="text" placeholder="Maths_B" id="Maths_B">
-			<input class="matières" type="text" placeholder="Maths_C" id="Maths_C">
-			<input class="matières" type="text" placeholder="Phy_A" id="Phy_A">
-			<input class="matières" type="text" placeholder="Phy_B" id="Phy_B">
-			<input class="matières" type="text" placeholder="Info" id="Info">
-			<input class="matières" type="text" placeholder="FR_A" id="FR_A">
-			<input class="matières" type="text" placeholder="FR_B" id="FR_B">
-			<input class="matières" type="text" placeholder="Ang_A" id="Ang_A">
-			<input class="matières" type="text" placeholder="Ang_B" id="Ang_B">
-			<input class="matières" type="text" placeholder="SI_A" id="SI_A">
 			<input class="matières" type="text" placeholder="SI_B" id="SI_B">
+			<input class="matières" type="text" placeholder="Maths_C" id="Maths_C">
+			<input class="matières" type="text" placeholder="Maths_A" id="Maths_A">
+			
+			<input class="matières" type="text" placeholder="FR_A" id="FR_A">
+			<input class="matières" type="text" placeholder="Maths_B" id="Maths_B">
+			<input class="matières" type="text" placeholder="FR_B" id="FR_B">
+			<input class="matières" type="text" placeholder="SI_A" id="SI_A">
+			<input class="matières" type="text" placeholder="Info" id="Info">
+			<input class="matières" type="text" placeholder="Phy_B" id="Phy_B">
+			<input class="matières" type="text" placeholder="Phy_A" id="Phy_A">
 			<input class="matières" type="text" placeholder="SI_C" id="SI_C">
+			
+			<input class="matières" type="text" placeholder="Ang_B" id="Ang_B">		
+			<input class="matières" type="text" placeholder="Ang_A" id="Ang_A">		
 		</div>
+
 			<p><a target="_blank" href="https://www.banquept.fr/2022_notes_oral/index.php">Résultats oraux</a></p>
 
 		<div>
 			<input class="matières" type="text" placeholder="M1" id="M1">
-			<input class="matières" type="text" placeholder="M2" id="M2">
 			<input class="matières" type="text" placeholder="TPPC" id="TPPC">
-			<input class="matières" type="text" placeholder="TPSI" id="TPSI">
-			<input class="matières" type="text" placeholder="PC" id="PC">
 			<input class="matières" type="text" placeholder="Planche" id="Planche">
+			<input class="matières" type="text" placeholder="M2" id="M2">
+			
+			
+			<input class="matières" type="text" placeholder="PC" id="PC">
+			<input class="matières" type="text" placeholder="TPSI" id="TPSI">
 			<input class="matières" type="text" placeholder="Angl" id="Angl">
 			<input class="matières" type="text" placeholder="LV2" id="LV2">
 			<input class="matières" type="text" placeholder="TIPE" id="TIPE">
@@ -89,7 +94,7 @@
 
 			if(LV2<=10){		
 				const centrale=document.querySelector(".centrale");
-				var moy_centrale=parseFloat((11*TIPE+13*(M1+M2+Angl)+22*TPPC+28*TPSI)+(8*Maths_A + 8*Maths_B + 8*Maths_C + 8*Phy_A + 8*Phy_B  + 10*Info + 17*FR_A+11*Ang_A+16*SI_A+6*SI_C))/200;
+				var moy_centrale=parseFloat((11*TIPE+13*(M1+M2+Angl)+22*TPPC+28*TPSI)+(8*Maths_A + 8*Maths_B + 8*Maths_C + 8*Phy_A + 8*Phy_B  + 10*Info + 17*FR_B+11*Ang_A+16*SI_A+6*SI_C))/200;
 				centrale.innerHTML=moy_centrale;
 
 				const mines=document.querySelector(".mines");
